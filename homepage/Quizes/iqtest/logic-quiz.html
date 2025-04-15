@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logical Reasoning Quiz | Qquizs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="l.png" alt="Qquizs Logo">
+            <span class="logo-text">Qquizs</span>
+        </div>
+        <nav>
+            <button class="mode-toggle-btn" id="modeToggle">☀️</button>
+        </nav>
+    </header>
+
+    <main class="quiz-container">
+        <div class="quiz-header">
+            <h1 class="quiz-title">Logical Reasoning Challenge</h1>
+            <div class="quiz-meta">
+                <div class="info-item">
+                    <span class="info-label">Questions:</span>
+                    <span class="info-value" id="totalQuestions">30</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Difficulty:</span>
+                    <span class="info-value" id="currentDifficulty">All Levels</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="difficulty-filter">
+            <button class="filter-btn active" data-difficulty="all">All Questions</button>
+            <button class="filter-btn" data-difficulty="basic">Basic</button>
+            <button class="filter-btn" data-difficulty="moderate">Moderate</button>
+            <button class="filter-btn" data-difficulty="advanced">Advanced</button>
+        </div>
+
+        <form id="quizForm">
+            <div class="questions-container" id="questionsContainer">
+                <!-- Questions will be inserted here by JavaScript -->
+            </div>
+
+            <div class="quiz-actions">
+                <button type="submit" class="submit-btn">Submit Quiz</button>
+            </div>
+        </form>
+
+        <div class="results-container" id="resultsContainer" style="display: none;">
+            <div class="results-header">
+                <h2>Your Results</h2>
+                <div class="water-divider"></div>
+            </div>
+            
+            <div class="score-display">
+                <div class="score-circle">
+                    <svg class="progress-ring" width="150" height="150">
+                        <circle class="progress-ring-circle" stroke-width="10" fill="transparent" r="65" cx="75" cy="75"/>
+                    </svg>
+                    <div class="score-text">
+                        <span id="scoreValue">0</span>
+                        <small>/<span id="totalQuestionsResult">30</span></small>
+                    </div>
+                </div>
+                <div class="percentage" id="percentage">0%</div>
+            </div>
+            
+            <div class="feedback" id="feedback">
+                <div class="feedback-icon"></div>
+                <p>Complete the quiz to see your feedback</p>
+            </div>
+            
+            <div class="answers-review">
+                <h3>Answer Review</h3>
+                <div class="answers-container" id="answersContainer"></div>
+            </div>
+            
+            <div class="result-actions">
+                <button type="button" class="retake-btn" id="retakeBtn">Retake Quiz</button>
+                <button type="button" class="home-btn">Back to Home</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="logic-quiz.js"></script>
+</body>
+</html>

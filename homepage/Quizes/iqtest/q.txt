@@ -1,0 +1,216 @@
+Basic Level (Questions 1-10)
+
+What is the next letter in the sequence: A, C, E, G, __?
+a) H
+b) I
+c) J
+d) K
+Correct Answer: b) I
+
+Which number comes next in the sequence: 2, 4, 6, 8, __?
+a) 9
+b) 10
+c) 11
+d) 12
+Correct Answer: b) 10
+
+Choose the word that is most similar in meaning to "happy":
+a) Sad
+b) Angry
+c) Joyful
+d) Tired
+Correct Answer: c) Joyful
+
+If all birds have feathers, and a robin is a bird, then a robin has:
+a) Wings
+b) Beak
+c) Feathers
+d) Can fly
+Correct Answer: c) Feathers
+
+What is the missing number: 1, 3, __, 7, 9?
+a) 4
+b) 5
+c) 6
+d) 8
+Correct Answer: b) 5
+
+Which shape comes next in the sequence: Circle, Square, Triangle, Circle, Square, __?
+a) Rectangle
+b) Pentagon
+c) Triangle
+d) Oval
+Correct Answer: c) Triangle
+
+Identify the odd one out:
+a) Dog
+b) Cat
+c) Fish
+d) Cow
+Correct Answer: c) Fish (the others are mammals)
+
+Solve the analogy: Day is to Night as Up is to:
+a) Left
+b) Right
+c) Down
+d) Sideways
+Correct Answer: c) Down
+
+If you rearrange the letters "TEA", you can form the word:
+a) EAT
+b) ATE
+c) ETA
+d) All of the above
+Correct Answer: d) All of the above
+
+What is half of 20?
+a) 5
+b) 10
+c) 15
+d) 40
+Correct Answer: b) 10
+
+Moderate Level (Questions 11-20)
+
+What is the next number in the sequence: 1, 4, 9, 16, __?
+a) 20
+b) 25
+c) 30
+d) 36
+Correct Answer: b) 25 (squares of consecutive numbers)
+
+Choose the word that completes the analogy: Book is to Reading as Fork is to:
+a) Writing
+b) Eating
+c) Drawing
+d) Sleeping
+Correct Answer: b) Eating
+
+If John is taller than Mary, and Mary is taller than Peter, then who is the tallest?
+a) Mary
+b) Peter
+c) John
+d) It cannot be determined
+Correct Answer: c) John
+
+Find the missing letter in the following pattern: B, D, G, K, __
+a) O
+b) P
+c) Q
+d) R
+Correct Answer: a) O (adding increasing odd numbers: +2, +3, +4)
+
+Identify the odd one out:
+a) Guitar
+b) Flute
+c) Piano
+d) Violin
+Correct Answer: b) Flute (it's a wind instrument, the others are stringed or keyboard)
+
+Solve the analogy: Doctor is to Hospital as Teacher is to:
+a) Medicine
+b) Classroom
+c) Patient
+d) Knowledge
+Correct Answer: b) Classroom
+
+What number should replace the question mark: 8, 6, 7, 5, 6, ?
+a) 3
+b) 4
+c) 5
+d) 7
+Correct Answer: b) 4 (alternating subtraction of 2 and 1)
+
+If you unscramble the letters "LISTEN", you get the word:
+a) SILENT
+b) TENSIL
+c) INLEST
+d) LENTIS
+Correct Answer: a) SILENT
+
+A train travels 60 miles per hour. How far will it travel in 30 minutes?
+a) 15 miles
+b) 20 miles
+c) 30 miles
+d) 120 miles
+Correct Answer: c) 30 miles
+
+Complete the series: 3, 8, 15, 24, __
+a) 30
+b) 32
+c) 35
+d) 48
+Correct Answer: c) 35 (adding consecutive odd numbers starting from 5)
+
+Advanced Level (Questions 21-30)
+
+What is the next letter in the sequence: O, T, T, F, F, S, S, E, __?
+a) N
+b) T
+c) E
+d) S
+Correct Answer: a) N (first letter of One, Two, Three, Four, Five, Six, Seven, Eight, Nine)
+
+Choose the word that has the least similarity with the other three:
+a) Biology
+b) Chemistry
+c) Physics
+d) Astronomy
+Correct Answer: d) Astronomy (the others are generally considered core branches of basic science)
+
+If "ACT" is coded as "BDU", then how is "CAT" coded?
+a) DBU
+b) DCU
+c) BDU
+d) DBV
+Correct Answer: b) DCU (each letter is shifted forward by one in the alphabet)
+
+Solve the analogy: Paradox is to Contradiction as Enigma is to:
+a) Solution
+b) Puzzle
+c) Clarity
+d) Answer
+Correct Answer: b) Puzzle
+
+What number should replace the question mark:
+
+6   8   ?
+5   7   6
+4   6   5
+a) 7
+b) 8
+c) 9
+d) 10
+Correct Answer: a) 7 (the sum of each column is 15)
+
+Identify the missing shape in the following pattern:
+(Imagine a sequence of shapes with a logical progression that requires visual representation. Since I can't display images, I'll describe the logic. Example: A square with a dot moving clockwise inside each step. The missing shape would have the dot in the next position.)
+Correct Answer: (Depends on the visual pattern provided)
+
+If all Bloops are Floops, and some Floops are Gloops, then which of the following must be true?
+a) All Bloops are Gloops.
+b) Some Bloops are Gloops.
+c) Some Gloops are Bloops.
+d) None of the above.
+Correct Answer: d) None of the above (the information doesn't guarantee any direct relationship between Bloops and Gloops)
+
+Unscramble the letters to form a meaningful word: "RAGAMN"
+a) ANGRAM
+b) MARGAN
+c) GRAMAN
+d) MANAGER
+Correct Answer: d) MANAGER
+
+A clock loses 5 minutes every hour. If it is set correctly at 12:00 PM, what time will it show after 6 hours?
+a) 5:30 PM
+b) 6:00 PM
+c) 5:00 PM
+d) 5:15 PM
+Correct Answer: a) 5:30 PM (loses 30 minutes in 6 hours)
+
+Complete the following series: 2, 3, 5, 7, 11, __
+a) 12
+b) 13
+c) 14
+d) 15
+Correct Answer: b) 13 (sequence of prime numbers)

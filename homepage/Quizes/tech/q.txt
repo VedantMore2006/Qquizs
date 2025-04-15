@@ -1,0 +1,215 @@
+Basic Level (Questions 1-10)
+
+What does "www" stand for in a website address?
+a) Wide World Web
+b) World Wide Web
+c) Web Wide World
+d) Wireless Web World
+Correct Answer: b) World Wide Web
+
+What is the main function of a computer's CPU?
+a) To store data
+b) To display graphics
+c) To process instructions
+d) To connect to the internet
+Correct Answer: c) To process instructions
+
+What is an email address used for?
+a) Making phone calls online
+b) Sending and receiving digital messages
+c) Browsing websites
+d) Playing video games
+Correct Answer: b) Sending and receiving digital messages
+
+What is a computer program that can copy itself and spread to other computers called?
+a) Virus
+b) Software
+c) Hardware
+d) Application
+Correct Answer: a) Virus
+
+What does "Wi-Fi" allow devices to do?
+a) Connect to wired networks
+b) Charge their batteries wirelessly
+c) Connect to the internet wirelessly
+d) Print documents remotely
+Correct Answer: c) Connect to the internet wirelessly
+
+What is a smartphone?
+a) A basic phone with limited features
+b) A mobile phone with advanced computing capabilities and internet connectivity
+c) A type of landline phone
+d) A device only used for taking pictures
+Correct Answer: b) A mobile phone with advanced computing capabilities and internet connectivity
+
+What is a "browser" used for on a computer?
+a) Writing documents
+b) Playing music
+c) Viewing websites
+d) Managing files
+Correct Answer: c) Viewing websites
+
+What is data storage commonly measured in?
+a) Volts and Amps
+b) Watts and Hertz
+c) Bytes and Gigabytes
+d) Pixels and Dots per Inch
+Correct Answer: c) Bytes and Gigabytes
+
+What is a "password" used for?
+a) To turn on a device
+b) To protect access to accounts and information
+c) To connect to a Wi-Fi network automatically
+d) To download files from the internet
+Correct Answer: b) To protect access to accounts and information
+
+What is the function of the "Enter" key on a keyboard?
+a) To delete characters
+b) To capitalize letters
+c) To move to a new line or execute a command
+d) To insert a space
+Correct Answer: c) To move to a new line or execute a command
+
+Moderate Level (Questions 11-20)
+
+What is the difference between RAM and ROM in a computer?
+a) RAM is for graphics, ROM is for processing
+b) RAM is temporary memory, ROM is permanent memory
+c) RAM is read-only, ROM is read-write
+d) RAM is for the operating system, ROM is for applications
+Correct Answer: b) RAM is temporary memory, ROM is permanent memory
+
+What does "URL" stand for?
+a) Universal Resource Locator
+b) Uniform Retrieval Language
+c) Unified Routing Link
+d) Universal Routing Logic
+Correct Answer: a) Universal Resource Locator
+
+What is the purpose of a firewall in computer security?
+a) To encrypt data transmissions
+b) To prevent unauthorized access to a network or computer
+c) To scan for and remove viruses
+d) To manage network connections
+Correct Answer: b) To prevent unauthorized access to a network or computer
+
+Which programming language is often used for web development and is known for its client-side scripting capabilities?
+a) Java
+b) Python
+c) JavaScript
+d) C++
+Correct Answer: c) JavaScript
+
+What is the function of a router in a home network?
+a) To connect a single computer to the internet
+b) To amplify the Wi-Fi signal
+c) To distribute internet access across multiple devices
+d) To store files on a shared network drive
+Correct Answer: c) To distribute internet access across multiple devices
+
+What is "cloud computing"?
+a) Using physical servers located in a specific building
+b) Storing and accessing data and applications over the internet
+c) A type of computer that uses atmospheric data for processing
+d) Connecting computers using physical cables only
+Correct Answer: b) Storing and accessing data and applications over the internet
+
+What is the resolution of a digital display typically measured in?
+a) Hertz (Hz)
+b) Pixels (width x height)
+c) Dots Per Inch (DPI)
+d) Bits per second (bps)
+Correct Answer: b) Pixels (width x height)
+
+What is the purpose of a VPN (Virtual Private Network)?
+a) To increase internet speed
+b) To create a secure and encrypted connection over a public network
+c) To block all advertisements online
+d) To automatically update software
+Correct Answer: b) To create a secure and encrypted connection over a public network
+
+What is the difference between HTTP and HTTPS?
+a) HTTPS is faster than HTTP
+b) HTTP is used for email, HTTPS is for websites
+c) HTTPS provides a secure and encrypted connection
+d) HTTP is newer than HTTPS
+Correct Answer: c) HTTPS provides a secure and encrypted connection
+
+What is an algorithm in computer science?
+a) A type of computer hardware
+b) A set of well-defined instructions for solving a problem
+c) A programming language used for artificial intelligence
+d) A method for compressing data files
+Correct Answer: b) A set of well-defined instructions for solving a problem
+
+Advanced Level (Questions 21-30)
+
+What is the fundamental principle behind blockchain technology?
+a) Centralized data storage and management
+b) Distributed and immutable ledger system
+c) Encryption based on a single authority
+d) Real-time data processing on a single server
+Correct Answer: b) Distributed and immutable ledger system
+
+What is the role of a DNS (Domain Name System) server?
+a) To assign IP addresses to devices on a network
+b) To translate domain names into IP addresses
+c) To manage network traffic and routing
+d) To provide security certificates for websites
+Correct Answer: b) To translate domain names into IP addresses
+
+What is the concept of "Moore's Law" in the context of computing?
+a) The price of transistors doubles every two years
+b) The speed of internet connections increases exponentially every year
+c) The number of transistors on a microchip doubles approximately every two years
+d) Software complexity doubles with each new version
+Correct Answer: c) The number of transistors on a microchip doubles approximately every two years
+
+What is the difference between symmetric and asymmetric encryption?
+a) Symmetric uses one key for encryption and decryption, asymmetric uses two different keys
+b) Symmetric is used for data storage, asymmetric is for network communication
+c) Symmetric is faster than asymmetric
+d) Symmetric is more secure than asymmetric
+Correct Answer: a) Symmetric uses one key for encryption and decryption, asymmetric uses two different keys
+
+What is the primary function of a GPU (Graphics Processing Unit)?
+a) General-purpose processing tasks
+b) Rendering graphics and parallel processing
+c) Managing system memory
+d) Handling network communications
+Correct Answer: b) Rendering graphics and parallel processing
+
+What is the concept of "API" (Application Programming Interface)?
+a) A physical interface for connecting hardware components
+b) A set of rules and protocols that allow different software applications to communicate with each other
+c) A type of programming language used for web applications
+d) A graphical user interface for operating systems
+Correct Answer: b) A set of rules and protocols that allow different software applications to communicate with each other
+
+What is "quantum computing" and how does it differ from classical computing?
+a) Quantum computing uses binary bits (0 or 1), while classical uses qubits (0, 1, or both simultaneously)
+b) Quantum computing is faster for all types of calculations compared to classical computing
+c) Quantum computing uses different physical hardware but the same logical principles as classical computing
+d) Quantum computing is primarily used for graphics rendering, while classical is for general processing
+Correct Answer: a) Quantum computing uses binary bits (0 or 1), while classical uses qubits (0, 1, or both simultaneously)
+
+What is the significance of "Big Data"?
+a) Small datasets that can be easily analyzed with traditional methods
+b) Extremely large and complex datasets that require advanced processing techniques
+c) Data stored only on physical hard drives
+d) Data that is always perfectly structured and easy to understand
+Correct Answer: b) Extremely large and complex datasets that require advanced processing techniques
+
+What is the fundamental concept behind machine learning?
+a) Explicitly programming computers for every possible scenario
+b) Enabling computers to learn from data without being explicitly programmed
+c) Using complex algorithms to compress data files
+d) Creating artificial intelligence that can perfectly mimic human behavior
+Correct Answer: b) Enabling computers to learn from data without being explicitly programmed
+
+What is the role of containerization technologies like Docker?
+a) To virtualize entire operating systems
+b) To package and isolate applications with their dependencies, making them portable
+c) To directly access and control computer hardware
+d) To create backups of entire computer systems
+Correct Answer: b) To package and isolate applications with their dependencies, making them portable

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qquizs - General Knowledge Quiz</title>
+    <link rel="stylesheet" href="gk.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="l.png" alt="Qquizs Logo">
+            <span class="logo-text">Qquizs</span>
+        </div>
+        <nav class="navbar">
+            <ul class="nav-menu">
+                <li><a href="homepage.html" class="nav-link">Home</a></li>
+                <li><a href="#" class="nav-link">Personality</a></li>
+                <li><a href="#" class="nav-link active">Knowledge</a></li>
+                <li><a href="#" class="nav-link">Movies</a></li>
+                <li><a href="#" class="nav-link">Geography</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle">☰</button>
+        </nav>
+        <button class="mode-toggle-btn" id="modeToggle">☀️</button>
+    </header>
+
+    <main class="quiz-container">
+        <section class="quiz-header">
+            <div class="quiz-title-container">
+                <h1 class="quiz-title">General Knowledge Quiz</h1>
+                <div class="quiz-info">
+                    <span class="info-item">
+                        <span class="info-label">Questions:</span>
+                        <span class="info-value" id="questionCount">0</span>
+                    </span>
+                    <span class="info-item">
+                        <span class="info-label">Time:</span>
+                        <span class="info-value timer" id="timer">00:00</span>
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <section class="difficulty-selector">
+            <label for="difficulty">Select Difficulty:</label>
+            <select id="difficulty" name="difficulty">
+                <option value="all">All Levels</option>
+                <option value="basic">Basic</option>
+                <option value="moderate">Moderate</option>
+                <option value="advanced">Advanced</option>
+            </select>
+        </section>
+
+        <form id="quizForm">
+            <div class="questions-container" id="questionsContainer">
+                <!-- Single question will be inserted here -->
+            </div>
+            <div class="quiz-actions">
+                <button type="button" class="nav-btn prev-btn" id="prevBtn" style="display: none;">Previous</button>
+                <button type="button" class="nav-btn next-btn" id="nextBtn">Next</button>
+            </div>
+        </form>
+
+        <section class="results-container" id="resultsContainer" style="display: none;">
+            <h2>Quiz Results</h2>
+            <div class="score-display">
+                <div class="score-circle">
+                    <svg class="progress-ring" width="120" height="120">
+                        <circle class="progress-ring-circle" stroke-width="8" fill="transparent" r="52" cx="60" cy="60"/>
+                    </svg>
+                    <div class="score-text">
+                        <span id="scoreValue">0</span>/<span id="totalQuestions">0</span>
+                    </div>
+                </div>
+                <div class="percentage" id="percentage">0%</div>
+            </div>
+            <div class="feedback" id="feedback"></div>
+            <div class="answers-review">
+                <h3>Your Answers</h3>
+                <div class="answers-container" id="answersContainer"></div>
+            </div>
+            <div class="result-actions">
+                <button class="retake-btn" id="retakeBtn">Retake Quiz</button>
+                <button class="home-btn" id="homeBtn">Back to Home</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="gk.js"></script>
+</body>
+</html>
