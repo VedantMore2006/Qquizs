@@ -620,6 +620,58 @@ header {
     color: var(--text-dark);
 }
 
+.navbar {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    transition: max-height 0.3s ease;
+}
+
+.nav-menu li {
+    position: relative;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: 600;
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode .nav-link {
+    color: var(--text-dark);
+}
+
+.nav-link:hover, .nav-link.active {
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    color: white;
+    box-shadow: 0 2px 10px rgba(230, 57, 70, 0.3);
+}
+
+.nav-link:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--primary);
+}
+
 .answer-correct::before {
     content: "Correct answer: ";
     font-weight: 500;

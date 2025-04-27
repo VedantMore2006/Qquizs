@@ -10,14 +10,21 @@
 <body>
     <header>
         <div class="logo-container">
-            <img src="l.png" alt="Qquizs Logo">
+            <img src="../generalknowledge/l.png" alt="Qquizs Logo">
             <span class="logo-text">Qquizs</span>
         </div>
-        <nav>
-            <button class="mode-toggle-btn" id="modeToggle" aria-label="Toggle dark mode">
-                <span class="sr-only">Toggle dark mode</span>
-                <span class="mode-icon">☀️</span>
-            </button>
+        <nav class="navbar">
+            <ul class="nav-menu">
+                <li><a href="/homepage/homepage.html" class="nav-link">Home</a></li>
+                <li><a href="../landmarks/landmarks.html" class="nav-link">Landmarks</a></li>
+                <li><a href="../iqtest/logic-quiz.html" class="nav-link">IQ-Test</a></li>
+                <li><a href="../generalknowledge/gk.html" class="nav-link">Knowledge</a></li>
+                <li><a href="../movie/movie.html" class="nav-link active">Movies</a></li>
+                <li><a href="../geography/quiz.html" class="nav-link">Geography</a></li>
+                <li><a href="../logo_guess/logo.html" class="nav-link">Logo-Guess</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">☰</button>
+            <button class="mode-toggle-btn" id="modeToggle" aria-label="Toggle dark mode">☀️</button>
         </nav>
     </header>
 

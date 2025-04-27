@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const switchButtons = document.querySelectorAll('.switch-form');
     const loginMessage = document.getElementById('loginMessage');
     const signupMessage = document.getElementById('signupMessage');
+    const successPopup = document.getElementById('successPopup');
+    const popupClose = document.getElementById('popupClose');
 
     // Check for saved dark mode preference
     if (localStorage.getItem('darkMode') === 'enabled') {
@@ -30,15 +32,21 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetForm = e.target.getAttribute('data-target');
             
             if (targetForm === 'loginForm') {
+                loginForm.classList.add('fade-in');
                 loginForm.classList.add('active');
                 signupForm.classList.remove('active');
+                signupForm.classList.remove('fade-in');
                 loginForm.querySelector('input').focus();
                 clearMessages();
+                successPopup.style.display = 'none';
             } else {
+                signupForm.classList.add('fade-in');
                 signupForm.classList.add('active');
                 loginForm.classList.remove('active');
+                loginForm.classList.remove('fade-in');
                 signupForm.querySelector('input').focus();
                 clearMessages();
+                successPopup.style.display = 'none';
             }
         });
     });
@@ -55,6 +63,27 @@ document.addEventListener('DOMContentLoaded', () => {
     function showMessage(element, text, isError = false) {
         element.textContent = text;
         element.className = `message ${isError ? 'error' : 'success'}`;
+    }
+
+    // Show success popup
+    function showSuccessPopup() {
+        successPopup.style.display = 'flex';
+        successPopup.focus();
+        setTimeout(() => {
+            closeSuccessPopup();
+        }, 3000);
+    }
+
+    // Close success popup and switch to login
+    function closeSuccessPopup() {
+        successPopup.style.display = 'none';
+        loginForm.classList.add('fade-in');
+        loginForm.classList.add('active');
+        signupForm.classList.remove('active');
+        signupForm.classList.remove('fade-in');
+        signupForm.reset();
+        clearMessages();
+        loginForm.querySelector('input').focus();
     }
 
     // Validate email format
@@ -122,18 +151,9 @@ document.addEventListener('DOMContentLoaded', () => {
             // Save user to localStorage
             users.push({ username, email, password });
             localStorage.setItem('users', JSON.stringify(users));
-            showMessage(signupMessage, 'Account created successfully!');
-
-            // Switch to login form
-            setTimeout(() => {
-                loginForm.classList.add('active');
-                signupForm.classList.remove('active');
-                signupForm.reset();
-                submitButton.innerHTML = 'Sign Up';
-                submitButton.disabled = false;
-                clearMessages();
-                loginForm.querySelector('input').focus();
-            }, 1500);
+            submitButton.innerHTML = 'Sign Up';
+            submitButton.disabled = false;
+            showSuccessPopup();
         }, 1000);
     });
 
@@ -156,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 localStorage.setItem('currentUser', username);
                 showMessage(loginMessage, 'Login successful! Redirecting...');
                 setTimeout(() => {
-                    window.location.href = 'landmarks.html';
+                    window.location.href = '/homepage/homepage.html';
                 }, 1500);
             } else {
                 showMessage(loginMessage, 'Invalid username or password.', true);
@@ -165,5 +185,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 submitButton.disabled = false;
             }
         }, 1000);
+    });
+
+    // Popup close button
+    popupClose.addEventListener('click', closeSuccessPopup);
+
+    // Close popup with Escape key
+    successPopup.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeSuccessPopup();
+        }
     });
 });
