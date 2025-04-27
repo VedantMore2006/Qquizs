@@ -17,7 +17,7 @@ Welcome to **Qquizs**, an interactive web application designed to test and expan
 ### Installation
 1. Clone the repository or download the files:
    ```
-   git clone https://github.com/VedantMore2006/pquiz.git
+   git clone https://github.com/VedantMore2006/Qquizs.git
    ```
 2. Navigate to the project directory:
    ```
