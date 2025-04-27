@@ -3,18 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Logo-Guess Quiz | Qquizs</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Logo-Guess Quiz | Quiz</title>
     <link rel="stylesheet" href="logo.css">
 </head>
 <body>
     <header>
         <div class="logo-container">
-            <img src="l.png" alt="Qquizs Logo">
-            <span class="logo-text">Qquizs</span>
+            <img src="l.png" alt="Quiz Logo" onerror="this.src='https://via.placeholder.com/45';">
+            <span class="logo-text">Quiz</span>
         </div>
-        <nav>
-            <button class="mode-toggle-btn" id="modeToggle">☀️</button>
+        <nav class="navbar">
+            <ul class="nav-menu">
+                <li><a href="homepage.html" class="nav-link">Home</a></li>
+                <li><a href="#" class="nav-link">Personality</a></li>
+                <li><a href="#" class="nav-link">Knowledge</a></li>
+                <li><a href="#" class="nav-link">Movies</a></li>
+                <li><a href="quiz.html" class="nav-link">Geography</a></li>
+                <li><a href="#" class="nav-link active">Logo-Guess</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">☰</button>
+            <button class="mode-toggle-btn" id="modeToggle" aria-label="Toggle dark mode">☀️</button>
         </nav>
     </header>
 
@@ -24,7 +32,7 @@
             <div class="quiz-meta">
                 <div class="info-item">
                     <span class="info-label">Questions:</span>
-                    <span class="info-value" id="totalQuestions">30</span>
+                    <span class="info-value" id="totalQuestions">0</span>
                 </div>
                 <div class="info-item">
                     <span class="info-label">Difficulty:</span>
@@ -34,19 +42,16 @@
         </div>
 
         <div class="difficulty-filter">
-            <button class="filter-btn active" data-difficulty="all">All Questions</button>
-            <button class="filter-btn" data-difficulty="basic">Basic</button>
-            <button class="filter-btn" data-difficulty="moderate">Moderate</button>
-            <button class="filter-btn" data-difficulty="advanced">Advanced</button>
+            <button class="filter-btn active" data-difficulty="all" aria-label="Show all questions">All Questions</button>
+            <button class="filter-btn" data-difficulty="basic" aria-label="Show basic questions">Basic</button>
+            <button class="filter-btn" data-difficulty="moderate" aria-label="Show moderate questions">Moderate</button>
+            <button class="filter-btn" data-difficulty="advanced" aria-label="Show advanced questions">Advanced</button>
         </div>
 
-        <form id="quizForm">
-            <div class="questions-container" id="questionsContainer">
-                <!-- Questions will be inserted here by JavaScript -->
-            </div>
-
+        <form id="quizForm" onsubmit="event.preventDefault();">
+            <div class="questions-container" id="questionsContainer"></div>
             <div class="quiz-actions">
-                <button type="submit" class="submit-btn">Submit Quiz</button>
+                <button type="submit" class="submit-btn" aria-label="Submit quiz">Submit Quiz</button>
             </div>
         </form>
 
@@ -55,7 +60,6 @@
                 <h2>Your Results</h2>
                 <div class="water-divider"></div>
             </div>
-            
             <div class="score-display">
                 <div class="score-circle">
                     <svg class="progress-ring" width="150" height="150">
@@ -63,25 +67,22 @@
                     </svg>
                     <div class="score-text">
                         <span id="scoreValue">0</span>
-                        <small>/<span id="totalQuestionsResult">30</span></small>
+                        <small>/<span id="totalQuestionsResult">0</span></small>
                     </div>
                 </div>
                 <div class="percentage" id="percentage">0%</div>
             </div>
-            
             <div class="feedback" id="feedback">
                 <div class="feedback-icon"></div>
                 <p>Complete the quiz to see your feedback</p>
             </div>
-            
             <div class="answers-review">
                 <h3>Answer Review</h3>
                 <div class="answers-container" id="answersContainer"></div>
             </div>
-            
             <div class="result-actions">
-                <button type="button" class="retake-btn" id="retakeBtn">Retake Quiz</button>
-                <button type="button" class="home-btn">Back to Home</button>
+                <button type="button" class="retake-btn" id="retakeBtn" aria-label="Retake quiz">Retake Quiz</button>
+                <button type="button" class="home-btn" id="homeBtn" aria-label="Back to home">Back to Home</button>
             </div>
         </div>
     </main>

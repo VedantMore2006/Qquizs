@@ -10,6 +10,8 @@
     --text-dark: #e0e0e0;
     --input-bg: #f0f2f5;
     --dark-input-bg: #2d2d2d;
+    --success: #4CAF50;
+    --error: #f44336;
 }
 
 * {
@@ -32,17 +34,21 @@ body {
     background-attachment: fixed;
     flex-direction: column;
     padding: 20px;
-    flex-direction: column;
-    padding: 20px;
-    transition: background-color 0.5s ease;
 }
 
 body.dark-mode {
     background: url('background.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
 }
 
 .logo-container {
@@ -80,7 +86,6 @@ body.dark-mode {
     overflow: hidden;
     opacity: 0;
     transform: rotateY(180deg);
-    transition: all 0.8s ease;
 }
 
 .dark-mode .login-form, 
@@ -107,14 +112,31 @@ body.dark-mode {
 }
 
 h2 {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     color: var(--primary);
     font-weight: 600;
     animation: fadeIn 0.6s ease 0.2s both;
 }
 
 .dark-mode h2 {
-    color: var(--secondary);
+    colorzij: var(--secondary);
+}
+
+.message {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.message.success {
+    background-color: rgba(76, 175, 80, 0.1);
+    color: var(--success);
+}
+
+.message.error {
+    background-color: rgba(244, 67, 54, 0.1);
+    color: var(--error);
 }
 
 .input-group {
@@ -123,10 +145,10 @@ h2 {
     animation: fadeIn 0.6s ease both;
 }
 
-.input-group:nth-child(1) { animation-delay: 0.3s; }
-.input-group:nth-child(2) { animation-delay: 0.4s; }
-.input-group:nth-child(3) { animation-delay: 0.5s; }
-.input-group:nth-child(4) { animation-delay: 0.6s; }
+.input-group:nth-child(2) { animation-delay: 0.3s; }
+.input-group:nth-child(3) { animation-delay: 0.4s; }
+.input-group:nth-child(4) { animation-delay: 0.5s; }
+.input-group:nth-child(5) { animation-delay: 0.6s; }
 
 .input-group label {
     display: block;
@@ -173,13 +195,29 @@ h2 {
     font-weight: 600;
     cursor: pointer;
     margin-top: 10px;
-    transition: all 0.3s ease;
     animation: fadeInUp 0.6s ease 0.4s both;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.auth-btn:hover {
+.auth-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.auth-btn:hover:not(:disabled) {
     transform: translateY(-3px) scale(1.02);
     box-shadow: 0 8px 20px rgba(230, 57, 70, 0.3);
+}
+
+.spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid white;
+    border-top: 3px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
 }
 
 .toggle-container {
@@ -201,7 +239,6 @@ h2 {
     justify-content: center;
     color: white;
     font-size: 1.2rem;
-    transition: all 0.3s ease;
 }
 
 .mode-toggle-btn:hover {
@@ -209,7 +246,7 @@ h2 {
 }
 
 .footer-text {
-    margin-top: 30px;
+    margin-top: 20px;
     color: #666;
     font-size: 14px;
     animation: fadeIn 0.6s ease 0.5s both;
@@ -245,13 +282,43 @@ h2 {
     color: var(--secondary);
 }
 
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-10px); }
+    40%, 80% { transform: translateX(10px); }
+}
+
 @media (max-width: 480px) {
+    .auth-container {
+        max-width: 100%;
+        padding: 0 15px;
+    }
+
     .login-form, .signup-form {
-        padding: 30px 20px;
+        padding: 25px 15px;
     }
     
     .logo-container img {
         height: 60px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .input-group input {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    .auth-btn {
+        font-size: 14px;
+        padding: 12px;
     }
 }
 
@@ -280,16 +347,5 @@ h2 {
     to {
         opacity: 1;
         transform: translateY(0);
-    }
-}
-
-@keyframes flipIn {
-    from {
-        transform: rotateY(90deg);
-        opacity: 0;
-    }
-    to {
-        transform: rotateY(0deg);
-        opacity: 1;
     }
 }

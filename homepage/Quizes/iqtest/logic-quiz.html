@@ -14,7 +14,10 @@
             <span class="logo-text">Qquizs</span>
         </div>
         <nav>
-            <button class="mode-toggle-btn" id="modeToggle">☀️</button>
+            <button class="mode-toggle-btn" id="modeToggle" aria-label="Toggle dark mode">
+                <span class="sr-only">Toggle dark mode</span>
+                <span class="mode-icon">☀️</span>
+            </button>
         </nav>
     </header>
 
@@ -24,7 +27,7 @@
             <div class="quiz-meta">
                 <div class="info-item">
                     <span class="info-label">Questions:</span>
-                    <span class="info-value" id="totalQuestions">30</span>
+                    <span class="info-value" id="totalQuestions">0</span>
                 </div>
                 <div class="info-item">
                     <span class="info-label">Difficulty:</span>
@@ -42,7 +45,9 @@
 
         <form id="quizForm">
             <div class="questions-container" id="questionsContainer">
-                <!-- Questions will be inserted here by JavaScript -->
+                <div class="loading" id="loadingSpinner" style="display: none; text-align: center; padding: 2rem;">
+                    <span>Loading questions...</span>
+                </div>
             </div>
 
             <div class="quiz-actions">
@@ -63,7 +68,7 @@
                     </svg>
                     <div class="score-text">
                         <span id="scoreValue">0</span>
-                        <small>/<span id="totalQuestionsResult">30</span></small>
+                        <small>/<span id="totalQuestionsResult">0</span></small>
                     </div>
                 </div>
                 <div class="percentage" id="percentage">0%</div>

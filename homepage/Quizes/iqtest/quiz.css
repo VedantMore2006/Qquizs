@@ -34,6 +34,17 @@ body.dark-mode {
     color: var(--text-dark);
 }
 
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -246,6 +257,17 @@ header {
 }
 
 .dark-mode .group-count {
+    color: var(--text-dark);
+}
+
+.no-questions {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.2rem;
+    color: var(--text-light);
+}
+
+.dark-mode .no-questions {
     color: var(--text-dark);
 }
 
@@ -467,11 +489,10 @@ header {
 }
 
 .progress-ring-circle {
-    stroke: var(--primary);
     stroke-linecap: round;
     transform: rotate(-90deg);
     transform-origin: 50% 50%;
-    transition: stroke-dashoffset 1s ease;
+    transition: stroke-dashoffset 1s ease, stroke 0.5s ease;
 }
 
 .score-text {
@@ -529,6 +550,16 @@ header {
     font-size: 1.2rem;
     font-weight: 500;
     line-height: 1.6;
+}
+
+.feedback .tips {
+    font-size: 1rem;
+    color: var(--text-light);
+    opacity: 0.8;
+}
+
+.dark-mode .feedback .tips {
+    color: var(--text-dark);
 }
 
 .answers-review {
@@ -671,6 +702,10 @@ header {
         padding: 1.2rem;
     }
     
+    .question-text {
+        font-size: 1rem;
+    }
+    
     .results-container {
         padding: 1.5rem;
     }
@@ -715,6 +750,10 @@ header {
     
     .score-text {
         font-size: 2rem;
+    }
+    
+    .score-text small {
+        font-size: 1.2rem;
     }
     
     .feedback p {

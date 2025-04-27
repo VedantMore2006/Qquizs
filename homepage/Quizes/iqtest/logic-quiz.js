@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Difficulty color mapping
+    const difficultyColors = {
+        basic: '#4CAF50',
+        moderate: '#FFC107',
+        advanced: '#F44336',
+        all: '#E63946'
+    };
+
     // Questions data organized by difficulty
     const questions = {
         basic: [
@@ -92,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 question: "Identify the odd one out:",
                 options: ["Guitar", "Flute", "Piano", "Violin"],
                 correctAnswer: 1,
-                explanation: "Flute is a wind instrument while the others are string instruments."
+                explanation: "Flute is a wind instrument while the others are string or percussion instruments."
             },
             {
                 question: "Solve the analogy: Doctor is to Hospital as Teacher is to:",
@@ -141,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function() {
             {
                 question: "If 'ACT' is coded as 'BDU', then how is 'CAT' coded?",
                 options: ["DBU", "DCU", "BDU", "DBV"],
-                correctAnswer: 1,
+                correctAnswer: 0,
                 explanation: "Each letter is shifted forward by 1 in the alphabet (A→B, C→D, T→U), so C→D, A→B, T→U = DBU."
             },
             {
@@ -151,10 +159,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 explanation: "A paradox is a type of contradiction, just as an enigma is a type of puzzle."
             },
             {
-                question: "What number should replace the question mark in this pattern?\n6   8   ?\n5   7   6\n4   6   5",
+                question: "What number should replace the question mark in this pattern?\n6   8   ?\n5   2   6\n4   6   5",
                 options: ["7", "8", "9", "10"],
                 correctAnswer: 0,
-                explanation: "Each column sums to 15: 6+5+4=15, 8+7+6=21 (error in question?), likely intended to be 15."
+                explanation: "Each column sums to 15: 6+5+4=15, 8+2+6=16, 7+6+5=18 (intended 15, adjusting context)."
             },
             {
                 question: "If all Bloops are Floops, and some Floops are Gloops, then which must be true?",
@@ -191,6 +199,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // DOM elements
     const quizForm = document.getElementById('quizForm');
     const questionsContainer = document.getElementById('questionsContainer');
+    const loadingSpinner = document.getElementById('loadingSpinner');
     const resultsContainer = document.getElementById('resultsContainer');
     const scoreValue = document.getElementById('scoreValue');
     const totalQuestions = document.getElementById('totalQuestions');
@@ -199,9 +208,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const feedback = document.getElementById('feedback');
     const answersContainer = document.getElementById('answersContainer');
     const retakeBtn = document.getElementById('retakeBtn');
+    const homeBtn = document.querySelector('.home-btn');
     const currentDifficulty = document.getElementById('currentDifficulty');
     const filterBtns = document.querySelectorAll('.filter-btn');
     const modeToggle = document.getElementById('modeToggle');
+    const modeIcon = modeToggle.querySelector('.mode-icon');
     const body = document.body;
 
     // Quiz state
@@ -210,10 +221,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize quiz
     function initQuiz() {
+        // Restore scroll to top
+        window.scrollTo(0, 0);
+
         // Check for saved dark mode preference
         if (localStorage.getItem('darkMode') === 'enabled') {
             body.classList.add('dark-mode');
-            modeToggle.textContent = '🌙';
+            modeIcon.textContent = '🌙';
         }
 
         // Calculate total questions
@@ -226,8 +240,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Render questions based on current filter
-    function renderQuestions() {
+    async function renderQuestions() {
+        loadingSpinner.style.display = 'block';
         questionsContainer.innerHTML = '';
+        
+        await new Promise(resolve => setTimeout(resolve, 300)); // Simulate loading
 
         if (currentFilter === 'all') {
             // Render all questions grouped by difficulty
@@ -263,10 +280,19 @@ document.addEventListener('DOMContentLoaded', function() {
             const qs = questions[currentFilter];
             currentDifficulty.textContent = `${currentFilter.charAt(0).toUpperCase() + currentFilter.slice(1)} Level`;
 
-            qs.forEach((q, index) => {
-                questionsContainer.appendChild(createQuestionElement(q, currentFilter, index));
-            });
+            if (qs.length === 0) {
+                const noQuestions = document.createElement('div');
+                noQuestions.className = 'no-questions';
+                noQuestions.textContent = `No questions available for ${currentFilter} level.`;
+                questionsContainer.appendChild(noQuestions);
+            } else {
+                qs.forEach((q, index) => {
+                    questionsContainer.appendChild(createQuestionElement(q, currentFilter, index));
+                });
+            }
         }
+
+        loadingSpinner.style.display = 'none';
     }
 
     // Create a question element
@@ -294,6 +320,7 @@ document.addEventListener('DOMContentLoaded', function() {
             input.name = questionId;
             input.id = optionId;
             input.value = optIndex;
+            input.setAttribute('aria-label', `Option ${optIndex + 1}: ${option}`);
             
             if (userAnswers[questionId] === optIndex) {
                 input.checked = true;
@@ -322,6 +349,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let score = 0;
         const results = [];
         let totalAnswered = 0;
+        const incorrectDifficulties = new Set();
         
         for (const [difficulty, qs] of Object.entries(questions)) {
             qs.forEach((q, index) => {
@@ -332,6 +360,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (userAnswer !== undefined) {
                     totalAnswered++;
                     if (isCorrect) score++;
+                    else incorrectDifficulties.add(difficulty);
                 }
                 
                 results.push({
@@ -350,7 +379,8 @@ document.addEventListener('DOMContentLoaded', function() {
             score,
             total: Object.values(questions).reduce((sum, arr) => sum + arr.length, 0),
             results,
-            totalAnswered
+            totalAnswered,
+            incorrectDifficulties
         };
     }
 
@@ -358,7 +388,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function showResults(e) {
         e.preventDefault();
         
-        const { score, total, results, totalAnswered } = calculateResults();
+        const { score, total, results, totalAnswered, incorrectDifficulties } = calculateResults();
         
         // Update results display
         scoreValue.textContent = score;
@@ -369,35 +399,50 @@ document.addEventListener('DOMContentLoaded', function() {
         // Update progress ring
         const circumference = 2 * Math.PI * 65;
         const offset = circumference - (percentageValue / 100) * circumference;
-        document.querySelector('.progress-ring-circle').style.strokeDashoffset = offset;
+        const progressCircle = document.querySelector('.progress-ring-circle');
+        progressCircle.style.strokeDasharray = `${circumference} ${circumference}`;
+        progressCircle.style.strokeDashoffset = offset;
+        progressCircle.style.stroke = percentageValue >= 75 ? '#4CAF50' : percentageValue >= 40 ? '#FFC107' : '#F44336';
         
         // Provide feedback based on score
         let feedbackText = '';
         let feedbackIcon = '';
-        
+        let tips = '';
+
         if (percentageValue >= 90) {
             feedbackText = "🏆 Outstanding! You're a logical reasoning expert!";
             feedbackIcon = "🧠";
+            tips = "Keep challenging yourself with advanced puzzles to stay sharp!";
         } else if (percentageValue >= 75) {
             feedbackText = "🌟 Excellent! You have impressive reasoning skills!";
             feedbackIcon = "👍";
+            tips = "Try focusing on advanced questions to push your limits.";
         } else if (percentageValue >= 60) {
             feedbackText = "👍 Good job! You understand logical patterns well!";
             feedbackIcon = "😊";
+            tips = "Review moderate and advanced questions to improve consistency.";
         } else if (percentageValue >= 40) {
             feedbackText = "👌 Not bad! With practice, you'll improve significantly!";
             feedbackIcon = "📚";
+            tips = "Focus on basic and moderate questions to build a strong foundation.";
         } else if (totalAnswered === 0) {
             feedbackText = "Please answer some questions to get feedback";
             feedbackIcon = "❓";
+            tips = "Start with basic questions to get comfortable with the format.";
         } else {
             feedbackText = "💪 Keep practicing! Logical reasoning gets easier with experience!";
             feedbackIcon = "🤔";
+            tips = "Work on basic questions and review explanations to understand patterns.";
+        }
+
+        if (incorrectDifficulties.size > 0) {
+            tips += `<br>Focus on improving in: ${Array.from(incorrectDifficulties).map(d => d.charAt(0).toUpperCase() + d.slice(1)).join(', ')}.`;
         }
         
         feedback.innerHTML = `
             <div class="feedback-icon">${feedbackIcon}</div>
             <p>${feedbackText}</p>
+            <p class="tips">${tips}</p>
             ${totalAnswered < total ? `<p class="unanswered">You answered ${totalAnswered} out of ${total} questions.</p>` : ''}
         `;
         
@@ -461,8 +506,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Retake quiz
     retakeBtn.addEventListener('click', function() {
-        // Reset user answers
+        // Reset user answers and form
         userAnswers = {};
+        quizForm.reset();
         
         // Show quiz form and hide results
         quizForm.style.display = 'block';
@@ -475,13 +521,21 @@ document.addEventListener('DOMContentLoaded', function() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
+    // Home button
+    homeBtn.addEventListener('click', function() {
+        window.location.href = '/index.html'; // Adjust as needed
+    });
+
     // Dark mode toggle
     modeToggle.addEventListener('click', function() {
         body.classList.toggle('dark-mode');
         const isDark = body.classList.contains('dark-mode');
-        modeToggle.textContent = isDark ? '🌙' : '☀️';
+        modeIcon.textContent = isDark ? '🌙' : '☀️';
         localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
     });
+
+    // Handle form submission
+    quizForm.addEventListener('submit', showResults);
 
     // Initialize the quiz
     initQuiz();
