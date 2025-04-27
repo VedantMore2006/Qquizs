@@ -448,10 +448,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 correctAnswerEl.textContent = result.options[result.correctAnswer];
 
                 if (result.explanation) {
-                    const_comment_lines_ = document.createElement('div');
-                    _comment_lines_.className = 'explanation';
-                    _comment_lines_.textContent = result.explanation;
-                    correctAnswerEl.appendChild(_comment_lines_);
+                    const explanationEl = document.createElement('div');
+                    explanationEl.className = 'explanation';
+                    explanationEl.textContent = result.explanation;
+                    correctAnswerEl.appendChild(explanationEl);
                 }
 
                 answerItem.appendChild(correctAnswerEl);
